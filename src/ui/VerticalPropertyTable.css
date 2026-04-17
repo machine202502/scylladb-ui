@@ -1,0 +1,66 @@
+.verticalPropertyTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-md);
+}
+
+.verticalPropertyTable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-table-header-bg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  padding: var(--space-4) var(--space-7);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+}
+
+.verticalPropertyTable tbody th,
+.verticalPropertyTable tbody td {
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  padding: var(--space-4) var(--space-7);
+  vertical-align: top;
+  text-align: left;
+}
+
+.verticalPropertyTable__name {
+  min-width: 10rem;
+  max-width: 42%;
+  word-break: break-word;
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  background: var(--color-bg-elevated);
+}
+
+.verticalPropertyTable__value {
+  font-family: var(--font-family-mono);
+  word-break: break-word;
+  color: var(--color-text-primary);
+}
+
+.verticalPropertyTable__input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-mono);
+  padding: 2px 6px;
+  border: var(--border-width-hairline) solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+
+.verticalPropertyTable__type {
+  font-family: var(--font-family-mono);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.verticalPropertyTable__row--changed th,
+.verticalPropertyTable__row--changed td {
+  background: color-mix(in srgb, #f9a825 14%, var(--color-bg-surface));
+}

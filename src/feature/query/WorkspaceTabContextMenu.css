@@ -1,0 +1,51 @@
+.workspaceTabMenu__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-workspace-tab-menu-backdrop, 9000);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: default;
+  outline: none;
+}
+
+.workspaceTabMenu {
+  position: fixed;
+  z-index: var(--z-workspace-tab-menu, 9001);
+  min-width: 11rem;
+  padding: var(--space-2) 0;
+  margin: 0;
+  border-radius: var(--radius-md);
+  border: var(--border-width-hairline) solid var(--color-border-default);
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-elevation-dialog, 0 4px 24px var(--color-shadow));
+}
+
+.workspaceTabMenu__item {
+  display: block;
+  width: 100%;
+  padding: var(--space-4) var(--space-8);
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.workspaceTabMenu__item:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+}
+
+.workspaceTabMenu__item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.workspaceTabMenu__sep {
+  margin: var(--space-2) 0;
+  border: none;
+  border-top: var(--border-width-hairline) solid var(--color-border-default);
+}

@@ -1,0 +1,93 @@
+.newConnectionModal__form {
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0);
+}
+
+.newConnectionModal__hint {
+  margin: var(--space-0) var(--space-0) var(--space-10);
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-snug);
+}
+
+.newConnectionModal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-9);
+  color: var(--color-text-muted);
+}
+
+.newConnectionModal__label {
+  font-size: inherit;
+  color: inherit;
+}
+
+.newConnectionModal__input {
+  padding: var(--control-padding-input-y) var(--control-padding-input-x);
+  border-radius: var(--radius-md);
+  border: var(--border-width-hairline) solid var(--color-border-strong);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-ui);
+  font-family: inherit;
+}
+
+.newConnectionModal__error {
+  margin: var(--space-0) var(--space-0) var(--space-7);
+  font-size: var(--font-size-base);
+  color: var(--color-danger);
+}
+
+.newConnectionModal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-7);
+  margin-top: var(--space-7);
+  padding-top: var(--space-7);
+  border-top: var(--border-width-hairline) solid var(--color-border-default);
+}
+
+.newConnectionModal__btnSecondary {
+  border: var(--border-width-hairline) solid var(--color-border-strong);
+  background: var(--color-bg-muted);
+  color: var(--color-text-primary);
+  padding: var(--control-padding-y-md) var(--control-padding-x-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.newConnectionModal__btnSecondary:hover:not(:disabled) {
+  background: var(--color-border-default);
+}
+
+.newConnectionModal__btnSecondary:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.newConnectionModal__submit {
+  padding: var(--control-padding-y-md) var(--control-padding-x-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  font-family: inherit;
+  border: var(--border-width-hairline) solid var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.newConnectionModal__submit:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.newConnectionModal__submit:disabled {
+  opacity: var(--opacity-muted-medium);
+  cursor: not-allowed;
+}

@@ -1,0 +1,113 @@
+:root {
+  --font-family-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-family-mono: ui-monospace, "Cascadia Code", "Consolas", monospace;
+
+  --font-size-2xs: 0.65rem;
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.72rem;
+  --font-size-md: 0.75rem;
+  --font-size-base: 0.8rem;
+  --font-size-ui: 0.85rem;
+  --font-size-lg: 0.95rem;
+  --font-size-xl: 1rem;
+  --font-size-2xl: 1.35rem;
+  --font-size-3xl: 1.5rem;
+
+  --line-height-none: 1;
+  --line-height-tight: 1.35;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.5;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+
+  --color-bg-canvas: #ffffff;
+  --color-bg-surface: #ffffff;
+  --color-bg-muted: #f5f5f7;
+  --color-bg-hover: #f5f5f7;
+  --color-bg-selected: #e8f2fc;
+  --color-text-primary: #1a1a1e;
+  --color-text-muted: #5c5c66;
+  --color-text-on-accent: #ffffff;
+
+  --color-border-default: #d1d1d6;
+  --color-border-strong: #b0b0b8;
+  --color-accent: #0066cc;
+  --color-accent-hover: #0052a3;
+  --color-danger: #c41e3a;
+  --color-status-ok: #1a8f3a;
+  --color-status-err: #c41e3a;
+
+  --color-table-header-bg: #ebebef;
+  --color-overlay-scrim: rgb(0 0 0 / 0.35);
+  --color-shadow: rgb(0 0 0 / 0.15);
+
+  --scrollbar-thickness: 5px;
+  --color-scrollbar-thumb: var(--color-border-default);
+  --color-scrollbar-thumb-hover: var(--color-border-strong);
+  --color-scrollbar-track: transparent;
+
+  --layout-resizer-hit: 6px;
+  --color-resizer-line: color-mix(in srgb, var(--color-scrollbar-thumb) 42%, white);
+
+  --space-0: 0;
+  --space-1: 0.15rem;
+  --space-2: 0.2rem;
+  --space-3: 0.25rem;
+  --space-4: 0.35rem;
+  --space-5: 0.4rem;
+  --space-6: 0.45rem;
+  --space-7: 0.5rem;
+  --space-8: 0.6rem;
+  --space-9: 0.65rem;
+  --space-10: 0.75rem;
+  --space-11: 0.85rem;
+  --space-12: 1rem;
+  --space-13: 1.25rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  --border-width-hairline: 1px;
+
+  --shadow-elevation-dialog: 0 var(--space-12) var(--space-12) var(--color-shadow);
+
+  --layout-app-min-height: 100vh;
+  --layout-sidebar-min: 260px;
+  --layout-sidebar-max: 320px;
+  --layout-explorer-min: 200px;
+  --layout-explorer-max: 280px;
+
+  --layout-toolbar-btn-size: 2rem;
+  --layout-toolbar-icon-size: 1.125rem;
+  --layout-conn-list-max-height: 200px;
+  --layout-scroll-min-height: 120px;
+  --layout-modal-max-width: 420px;
+  --layout-modal-max-height: min(90vh, 640px);
+  --layout-toolbar-number-width: 4rem;
+  --layout-breakpoint-md: 900px;
+  --layout-sidebar-collapsed-max-height: 45vh;
+  --layout-tree-indent-step: 0.75rem;
+
+  --z-index-modal: 1000;
+  --z-index-toast: 1100;
+
+  --color-toast-error-bg: #fde8ec;
+  --color-toast-error-border: var(--color-danger);
+
+  --opacity-disabled: 0.45;
+  --opacity-muted-strong: 0.4;
+  --opacity-muted-medium: 0.5;
+
+  --control-padding-y-sm: 0.35rem;
+  --control-padding-x-sm: 0.65rem;
+  --control-padding-y-md: 0.4rem;
+  --control-padding-x-md: 0.85rem;
+  --control-padding-input-y: 0.45rem;
+  --control-padding-input-x: 0.55rem;
+
+  --letter-spacing-wide: 0.03em;
+}

@@ -1,0 +1,103 @@
+.mainPage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mainPage__footer {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  border-top: var(--border-width-hairline) solid var(--color-border-default);
+  background: var(--color-bg-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-secondary);
+}
+
+.mainPage__footerConnName {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.mainPage__footerHostPort {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-regular);
+}
+
+.mainPage__footerPath {
+  font-family: var(--font-family-mono, ui-monospace, monospace);
+  font-style: italic;
+  font-weight: var(--font-weight-regular);
+  word-break: break-all;
+}
+
+.mainPage__grid {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: var(--main-sidebar-px, 280px) var(--layout-resizer-hit) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.mainPage__grid > * {
+  min-height: 0;
+}
+
+.mainPage__treeScroll {
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: auto;
+  background: var(--color-bg-surface);
+}
+
+.mainPage__resizer {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: col-resize;
+  background: var(--color-resizer-line);
+  flex-shrink: 0;
+  align-self: stretch;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  line-height: 0;
+  font-size: 0;
+  transition: background-color 0.12s ease;
+}
+
+.mainPage__resizer:hover,
+.mainPage__resizer:focus-visible {
+  background: var(--color-accent);
+}
+
+.mainPage__resizer:active {
+  background: var(--color-accent-hover);
+}
+
+@media (max-width: 900px) {
+  .mainPage__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .mainPage__resizer {
+    display: none;
+  }
+
+  .mainPage__treeScroll {
+    max-height: var(--layout-sidebar-collapsed-max-height);
+  }
+}

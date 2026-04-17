@@ -1,0 +1,152 @@
+.connectionRoot {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.connectionRoot__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+}
+
+.connectionRoot__tabBtn {
+  margin: 0 0 -1px;
+  padding: var(--space-4) var(--space-7);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.connectionRoot__tabBtn:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-hover);
+}
+
+.connectionRoot__tabBtn_active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  border-bottom-color: var(--color-accent);
+}
+
+.connectionRoot__tabPanel {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.connectionRoot__tabPanel > * {
+  min-width: 0;
+}
+
+.connectionRoot__overview {
+  font-size: var(--font-size-sm);
+}
+
+.connectionRoot__kv {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4) var(--space-10);
+  margin: 0;
+}
+
+.connectionRoot__kv dt {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+.connectionRoot__kv dd {
+  margin: 0;
+  font-family: var(--font-family-mono);
+  color: var(--color-text-primary);
+}
+
+.connectionRoot__settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  min-height: 0;
+  min-width: 0;
+}
+
+.connectionRoot__sectionTitle {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.connectionRoot__hint {
+  margin: 0 0 var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Outer: жёстко ограничивает ширину (иначе flex-родитель раздувается под таблицу и скролла нет). */
+.connectionRoot__tableOuter {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: var(--border-width-hairline) solid var(--color-border-default);
+  background: var(--color-bg-surface);
+}
+
+/* Inner: scroll — полоса видна при переполнении (не overlay Fluent); см. tauri.conf без fluentOverlay. */
+.connectionRoot__tableInner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-scrollbar-thumb-hover) var(--color-bg-muted);
+}
+
+.connectionRoot__tableInner::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.connectionRoot__tableInner::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb-hover);
+  border-radius: 6px;
+}
+
+.connectionRoot__tableInner::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
+}
+
+.connectionRoot__tableInner::-webkit-scrollbar-track {
+  background: var(--color-bg-muted);
+}
+
+.connectionRoot__tableInner .dataTable {
+  width: max-content;
+  min-width: 100%;
+}
+
+.connectionRoot__muted {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

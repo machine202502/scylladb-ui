@@ -1,0 +1,69 @@
+.dataTable {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-md);
+  font-family: var(--font-family-mono);
+}
+
+.dataTable th,
+.dataTable td {
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  padding: var(--space-4) var(--space-7);
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.dataTable th {
+  position: sticky;
+  top: var(--space-0);
+  background: var(--color-table-header-bg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dataTable th.dataTable__cell--right,
+.dataTable td.dataTable__cell--right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.dataTable__null {
+  font-style: italic;
+  opacity: 0.65;
+}
+
+.dataTable__value {
+  color: var(--color-text-primary);
+}
+
+.dataTable__value--text {
+  color: #2f4e78;
+}
+
+.dataTable__value--number {
+  color: #355f96;
+}
+
+.dataTable__value--date {
+  color: #3f6a52;
+}
+
+.dataTable__value--uuid {
+  color: #5b4f86;
+}
+
+.dataTable__value--json {
+  color: #6d5252;
+}
+
+.dataTable__value--empty {
+  color: var(--color-text-muted);
+  opacity: 0.75;
+}
+
+.dataTable__value--invalidJson {
+  color: #c62828;
+  font-weight: var(--font-weight-semibold);
+}

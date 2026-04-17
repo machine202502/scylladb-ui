@@ -1,0 +1,131 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: var(--space-0);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  background: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-corner {
+  border-radius: 0;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar,
+.dataWorkspace__scroll::-webkit-scrollbar,
+.tableResource__scroll::-webkit-scrollbar {
+  width: var(--scrollbar-thickness);
+  height: var(--scrollbar-thickness);
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-button:vertical:start:decrement,
+.mainPage__treeScroll::-webkit-scrollbar-button:vertical:end:increment,
+.mainPage__treeScroll::-webkit-scrollbar-button:horizontal:start:decrement,
+.mainPage__treeScroll::-webkit-scrollbar-button:horizontal:end:increment,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:vertical:start:decrement,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:vertical:end:increment,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:horizontal:start:decrement,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:horizontal:end:increment,
+.dataWorkspace__scroll::-webkit-scrollbar-button:vertical:start:decrement,
+.dataWorkspace__scroll::-webkit-scrollbar-button:vertical:end:increment,
+.dataWorkspace__scroll::-webkit-scrollbar-button:horizontal:start:decrement,
+.dataWorkspace__scroll::-webkit-scrollbar-button:horizontal:end:increment,
+.tableResource__scroll::-webkit-scrollbar-button:vertical:start:decrement,
+.tableResource__scroll::-webkit-scrollbar-button:vertical:end:increment,
+.tableResource__scroll::-webkit-scrollbar-button:horizontal:start:decrement,
+.tableResource__scroll::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-button:vertical:start:increment,
+.mainPage__treeScroll::-webkit-scrollbar-button:vertical:end:decrement,
+.mainPage__treeScroll::-webkit-scrollbar-button:horizontal:start:increment,
+.mainPage__treeScroll::-webkit-scrollbar-button:horizontal:end:decrement,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:vertical:start:increment,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:vertical:end:decrement,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:horizontal:start:increment,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:horizontal:end:decrement,
+.dataWorkspace__scroll::-webkit-scrollbar-button:vertical:start:increment,
+.dataWorkspace__scroll::-webkit-scrollbar-button:vertical:end:decrement,
+.dataWorkspace__scroll::-webkit-scrollbar-button:horizontal:start:increment,
+.dataWorkspace__scroll::-webkit-scrollbar-button:horizontal:end:decrement,
+.tableResource__scroll::-webkit-scrollbar-button:vertical:start:increment,
+.tableResource__scroll::-webkit-scrollbar-button:vertical:end:decrement,
+.tableResource__scroll::-webkit-scrollbar-button:horizontal:start:increment,
+.tableResource__scroll::-webkit-scrollbar-button:horizontal:end:decrement {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-button:single-button:vertical:decrement,
+.mainPage__treeScroll::-webkit-scrollbar-button:single-button:vertical:increment,
+.mainPage__treeScroll::-webkit-scrollbar-button:single-button:horizontal:decrement,
+.mainPage__treeScroll::-webkit-scrollbar-button:single-button:horizontal:increment,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:single-button:vertical:decrement,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:single-button:vertical:increment,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:single-button:horizontal:decrement,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button:single-button:horizontal:increment,
+.dataWorkspace__scroll::-webkit-scrollbar-button:single-button:vertical:decrement,
+.dataWorkspace__scroll::-webkit-scrollbar-button:single-button:vertical:increment,
+.dataWorkspace__scroll::-webkit-scrollbar-button:single-button:horizontal:decrement,
+.dataWorkspace__scroll::-webkit-scrollbar-button:single-button:horizontal:increment,
+.tableResource__scroll::-webkit-scrollbar-button:single-button:vertical:decrement,
+.tableResource__scroll::-webkit-scrollbar-button:single-button:vertical:increment,
+.tableResource__scroll::-webkit-scrollbar-button:single-button:horizontal:decrement,
+.tableResource__scroll::-webkit-scrollbar-button:single-button:horizontal:increment {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-button,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-button,
+.dataWorkspace__scroll::-webkit-scrollbar-button,
+.tableResource__scroll::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-track,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-track,
+.dataWorkspace__scroll::-webkit-scrollbar-track,
+.tableResource__scroll::-webkit-scrollbar-track {
+  background: #ececf1;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-thumb,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-thumb,
+.dataWorkspace__scroll::-webkit-scrollbar-thumb,
+.tableResource__scroll::-webkit-scrollbar-thumb {
+  background: #b2b2ba;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-thumb:hover,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-thumb:hover,
+.dataWorkspace__scroll::-webkit-scrollbar-thumb:hover,
+.tableResource__scroll::-webkit-scrollbar-thumb:hover {
+  background: #9797a3;
+}
+
+.mainPage__treeScroll::-webkit-scrollbar-corner,
+.dataWorkspace__tabStripScroll::-webkit-scrollbar-corner,
+.dataWorkspace__scroll::-webkit-scrollbar-corner,
+.tableResource__scroll::-webkit-scrollbar-corner {
+  background: #ececf1;
+}

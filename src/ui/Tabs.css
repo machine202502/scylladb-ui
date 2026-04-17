@@ -1,0 +1,27 @@
+.tabStrip {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+
+.tabStrip__tab {
+  padding: var(--space-4) var(--space-9);
+  border-radius: var(--radius-md);
+  border: var(--border-width-hairline) solid var(--color-border-strong);
+  background: var(--color-bg-muted);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+}
+
+.tabStrip__tab:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.tabStrip__tab_active {
+  background: var(--color-bg-surface);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}

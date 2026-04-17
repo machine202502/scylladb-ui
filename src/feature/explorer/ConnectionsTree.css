@@ -1,0 +1,281 @@
+@import "../../ui/StubTree.css";
+
+.connectionsTree {
+  --layout-tree-indent-step: 0.55rem;
+  --color-tree-row-hover: #e6e6ed;
+  min-height: var(--space-0);
+  min-width: min-content;
+  overflow: visible;
+  padding: var(--space-5) 0;
+  background: var(--color-bg-surface);
+}
+
+@media (max-width: 900px) {
+  .connectionsTree {
+    border-right: none;
+    border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  }
+}
+
+.connectionsTree .treeNav__list {
+  font-size: var(--font-size-xs);
+}
+
+.connectionsTree .treeNav__row.connectionsTree__treeRow {
+  gap: 2px;
+  align-items: center;
+  min-height: 1.15rem;
+  width: 100%;
+}
+
+.connectionsTree__rowHover {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.connectionsTree .treeNav__caret {
+  width: 1rem;
+  min-width: 1rem;
+  padding: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1;
+  font-weight: var(--font-weight-semibold);
+}
+
+.connectionsTree__caretLoader {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin: 0 auto;
+  border: 1.5px solid var(--color-text-muted);
+  border-top-color: transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  animation: connectionsTreeCaretSpin 0.65s linear infinite;
+}
+
+@keyframes connectionsTreeCaretSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.connectionsTree .treeNav__caretSpacer {
+  width: 1rem;
+  min-width: 1rem;
+}
+
+.connectionsTree .treeNav__mono {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+}
+
+.connectionsTree__rowHover:hover:not(:has(.connectionsTree__selected)) {
+  background: var(--color-tree-row-hover);
+}
+
+.connectionsTree__rowHover:has(.connectionsTree__selected) {
+  background: var(--color-bg-selected);
+}
+
+.connectionsTree__rowHover:has(.connectionsTree__selected):hover {
+  background: var(--color-bg-selected);
+}
+
+.connectionsTree__rowMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.connectionsTree__rowMain > button {
+  flex: 1;
+  min-width: 0;
+}
+
+.connectionsTree__rowRefreshSlot {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.connectionsTree__rowRefresh {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-bg-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.12s ease, color 0.12s ease;
+}
+
+.connectionsTree__rowHover:hover .connectionsTree__rowRefresh {
+  opacity: 1;
+}
+
+.connectionsTree__rowRefresh:hover {
+  background: var(--color-bg-surface);
+  color: var(--color-accent);
+}
+
+.connectionsTree__rowRefreshIcon {
+  width: 11px;
+  height: 11px;
+}
+
+.connectionsTree__selected {
+  font-weight: var(--font-weight-semibold);
+  background: transparent !important;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none;
+}
+
+.connectionsTree__rowHover:has(.connectionsTree__selected) .connectionsTree__connLabel:hover,
+.connectionsTree__rowHover:has(.connectionsTree__selected) .connectionsTree__folderBtn:hover,
+.connectionsTree__rowHover:has(.connectionsTree__selected) .connectionsTree__leafBtn:hover,
+.connectionsTree__rowHover:has(.connectionsTree__selected) .connectionsTree__tableBtn:hover,
+.connectionsTree__rowHover:has(.connectionsTree__selected) .connectionsTree__ks:hover {
+  background: transparent;
+}
+
+.connectionsTree__status {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  line-height: 1;
+  width: 1.1rem;
+  text-align: center;
+}
+
+.connectionsTree__status_ok {
+  color: var(--color-status-ok);
+}
+
+.connectionsTree__status_err {
+  color: var(--color-status-err);
+}
+
+.connectionsTree__connLabel {
+  flex: 1;
+  min-width: var(--space-0);
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-text-primary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.connectionsTree__connLabel:hover {
+  background: var(--color-bg-hover);
+}
+
+.connectionsTree .connectionsTree__folderBtn,
+.connectionsTree .connectionsTree__leafBtn,
+.connectionsTree .connectionsTree__tableBtn {
+  flex: 1;
+  min-width: var(--space-0);
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-text-primary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.connectionsTree .connectionsTree__folderBtn:hover,
+.connectionsTree .connectionsTree__leafBtn:hover,
+.connectionsTree .connectionsTree__tableBtn:hover {
+  background: transparent;
+}
+
+.connectionsTree__rowKindIcon {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  color: var(--color-text-muted);
+}
+
+.connectionsTree__rowKindLabel {
+  flex-shrink: 0;
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-muted);
+}
+
+.connectionsTree__rowEntityName {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-accent);
+}
+
+.connectionsTree__tableBtn .connectionsTree__rowKindIcon,
+.connectionsTree__tableBtn .connectionsTree__rowKindLabel {
+  color: var(--color-text-muted);
+}
+
+.connectionsTree__resourceName {
+  color: var(--color-accent);
+}
+
+.connectionsTree__resourceSep {
+  color: var(--color-text-muted);
+}
+
+.connectionsTree__resourceType {
+  color: var(--color-status-ok);
+}
+
+.connectionsTree__tableBtn .connectionsTree__rowEntityName,
+.connectionsTree__ks .connectionsTree__rowEntityName {
+  color: var(--color-accent);
+}
+
+.connectionsTree__loading {
+  display: block;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.connectionsTree .connectionsTree__ks {
+  flex: 1;
+  min-width: var(--space-0);
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-text-primary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.connectionsTree .connectionsTree__ks:hover {
+  background: transparent;
+}
+

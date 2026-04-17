@@ -1,0 +1,18 @@
+[[permission]]
+identifier = "allow-app-ipc"
+description = "Allow app IPC: logs, SQLite connections, Scylla commands"
+commands.allow = [
+  "log_write",
+  "log_list",
+  "log_filter_options",
+  "db_list_connections",
+  "db_save_connection",
+  "db_delete_connection",
+  "db_get_connection",
+  "scylla_test",
+  "scylla_keyspaces",
+  "scylla_tables",
+  "scylla_preview",
+  "scylla_run_cql",
+  "scylla_schema_list",
+]

@@ -1,0 +1,45 @@
+.mainToolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-6) var(--space-10);
+  background: var(--color-bg-surface);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  flex-shrink: 0;
+}
+
+.mainToolbar__btn {
+  width: var(--layout-toolbar-btn-size);
+  height: var(--layout-toolbar-btn-size);
+  min-width: var(--layout-toolbar-btn-size);
+  padding: var(--space-0);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: var(--border-width-hairline) solid var(--color-border-strong);
+  background: var(--color-bg-muted);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-none);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.mainToolbar__icon {
+  width: var(--layout-toolbar-icon-size);
+  height: var(--layout-toolbar-icon-size);
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+.mainToolbar__btn:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+  border-color: var(--color-accent);
+}
+
+.mainToolbar__btn:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}

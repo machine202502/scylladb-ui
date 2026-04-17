@@ -1,0 +1,3 @@
+export const MAIN_PAGE_SIDEBAR_DEFAULT_PX = 280;
+export const MAIN_PAGE_SIDEBAR_MIN_PX = 200;
+export const MAIN_PAGE_SIDEBAR_MAX_PX = 560;

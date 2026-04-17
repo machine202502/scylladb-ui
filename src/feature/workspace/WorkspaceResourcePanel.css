@@ -1,0 +1,55 @@
+.workspaceResourcePanel {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--space-0);
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.workspaceResourcePanel__body {
+  flex: 1;
+  padding: var(--space-6) var(--space-8);
+  min-height: var(--space-0);
+}
+
+.workspaceResourcePanel__body--tableResource {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.workspaceResourcePanel__body--connectionRoot {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: var(--space-4);
+}
+
+.workspaceResourcePanel__notice {
+  margin: 0 0 var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-sm);
+  border: var(--border-width-hairline) solid var(--color-border-default);
+}
+
+.workspaceResourcePanel__list {
+  margin: var(--space-0);
+  padding-left: var(--space-8);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+}
+
+.workspaceResourcePanel__scroll {
+  flex: 1;
+  min-height: var(--space-0);
+  overflow: auto;
+}

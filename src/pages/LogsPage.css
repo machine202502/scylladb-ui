@@ -1,0 +1,514 @@
+.logsPage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-bg-canvas);
+  font-family: var(--font-family-sans);
+  color: var(--color-text-primary);
+}
+
+.logsPage__topBar {
+  flex-shrink: 0;
+  padding: var(--space-8) var(--space-8) var(--space-5);
+  border-bottom: var(--border-width-hairline) solid color-mix(in srgb, var(--color-border-default) 60%, white);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-bg-muted) 58%, white),
+    var(--color-bg-canvas)
+  );
+}
+
+.logsPage__tableShell {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 var(--space-8) var(--space-8);
+  border: var(--border-width-hairline) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--color-bg-surface);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--color-shadow) 35%, transparent);
+}
+
+.logsPage__theadWrap {
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--color-bg-muted) 75%, white);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+}
+
+.logsPage__tbodyScroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--color-bg-surface);
+  scrollbar-gutter: stable;
+}
+
+.logsPage__timeBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 2.1rem;
+}
+
+.logsPage__timeLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: color-mix(in srgb, var(--color-text-muted) 78%, var(--color-text-primary));
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.logsPage__timeSelect {
+  width: 10rem;
+  border-radius: var(--radius-md);
+  border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-border-default) 90%, white);
+  padding: var(--space-2) var(--space-3);
+  font: inherit;
+  font-size: var(--font-size-xs);
+  background: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.logsPage__timeSelect:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.logsPage__tzInput {
+  width: 14rem;
+}
+
+.logsPage__refreshBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+  padding: var(--space-2) var(--space-4);
+  font: inherit;
+  font-size: var(--font-size-xs);
+  border: var(--border-width-hairline) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg-canvas) 92%, var(--color-bg-muted));
+  color: color-mix(in srgb, var(--color-text-primary) 86%, var(--color-text-muted));
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease, background-color 0.12s ease;
+}
+
+.logsPage__refreshBtn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 8%, white);
+}
+
+.logsPage__refreshIcon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.logsPage__refreshLabel {
+  white-space: nowrap;
+}
+
+.logsPage__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: var(--font-size-xs);
+}
+
+.logsPage__tableHead,
+.logsPage__tableBody {
+  border: none;
+  background: transparent;
+}
+
+.logsPage__col--id {
+  width: 4rem;
+}
+
+.logsPage__col--kind {
+  width: 4rem;
+}
+
+.logsPage__col--trace {
+  width: 14rem;
+}
+
+.logsPage__col--type {
+  width: 14rem;
+}
+
+.logsPage__col--desc {
+  width: auto;
+}
+
+.logsPage__col--created {
+  width: 16rem;
+}
+
+.logsPage__th {
+  text-align: left;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  background: color-mix(in srgb, var(--color-table-header-bg) 72%, white);
+  vertical-align: bottom;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.015em;
+}
+
+.logsPage__sortBtn {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-weight: var(--font-weight-semibold);
+  transition: color 0.12s ease;
+}
+
+.logsPage__sortBtn:hover {
+  color: var(--color-accent);
+}
+
+.logsPage__thPlain {
+  display: block;
+  padding: var(--space-0);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.logsPage__filterRow .logsPage__td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  background: color-mix(in srgb, var(--color-bg-muted) 34%, white);
+  vertical-align: top;
+}
+
+.logsPage__filterRow .logsPage__tdFilterEmpty {
+  min-height: 2.25rem;
+}
+
+.logsPage__filter {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  font-size: var(--font-size-2xs);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-border-default) 90%, white);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.logsPage__filter:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.logsPage__filterSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--color-text-muted) 50%),
+    linear-gradient(135deg, var(--color-text-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) calc(50% - 2px),
+    calc(100% - 9px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 1.75rem;
+}
+
+.logsPage__filterWide {
+  max-width: 100%;
+}
+
+.logsPage__tdStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.logsPage__timeField {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
+  border: var(--border-width-hairline) solid color-mix(in srgb, var(--color-border-default) 86%, white);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-bg-canvas) 88%, var(--color-bg-muted));
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.logsPage__timeField:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.logsPage__timeFieldLabel {
+  flex-shrink: 0;
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: color-mix(in srgb, var(--color-text-muted) 85%, var(--color-text-primary));
+  user-select: none;
+}
+
+.logsPage__timeFieldInput {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: var(--font-size-2xs);
+  padding: var(--space-2) 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.logsPage__timeFieldInput::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.85;
+}
+
+.logsPage__timeFieldInput:focus {
+  outline: none;
+}
+
+/* Якорь: popover привязан к rect input — тот же размер и позиция, что и кнопка слева. */
+.logsPage__timeFieldCalAnchor {
+  position: relative;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.logsPage__timeFieldNativePicker {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
+}
+
+.logsPage__timeFieldCalBtn {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg-canvas) 90%, var(--color-bg-muted));
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.logsPage__timeFieldCalBtn:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-accent);
+}
+
+.logsPage__timeFieldCalBtn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.logsPage__timeFieldCalIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.logsPage__td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width-hairline) solid var(--color-border-default);
+  vertical-align: middle;
+  font-size: var(--font-size-xs);
+}
+
+.logsPage__row {
+  cursor: pointer;
+}
+
+.logsPage__row:hover {
+  background: color-mix(in srgb, var(--color-bg-hover) 75%, white);
+}
+
+.logsPage__row:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.logsPage__row_error {
+  box-shadow: inset 3px 0 0 0 var(--color-status-err);
+}
+
+.logsPage__row_warn {
+  box-shadow: inset 3px 0 0 0 #c98a00;
+}
+
+.logsPage__row_info {
+  box-shadow: inset 3px 0 0 0 var(--color-accent);
+}
+
+.logsPage__cellInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  width: 100%;
+}
+
+.logsPage__cellText {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logsPage__copyBtn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: var(--border-width-hairline) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg-canvas) 92%, var(--color-bg-muted));
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 0;
+  transition: border-color 0.12s ease, color 0.12s ease, background-color 0.12s ease;
+}
+
+.logsPage__copyBtn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.logsPage__copyIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.logsPage__cell:nth-child(5),
+.logsPage__cell:nth-child(6) {
+  min-width: 0;
+}
+
+.logsPage__sentinel {
+  height: 1px;
+}
+
+.logsPage__empty,
+.logsPage__loading {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-8) var(--space-8);
+}
+
+.logsPage__modalBody {
+  padding: var(--space-0) var(--space-12) var(--space-12);
+}
+
+.logsPage__dl {
+  margin: var(--space-0);
+  display: grid;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.logsPage__dl dt {
+  margin: 0;
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: none;
+}
+
+.logsPage__dl dd {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+.logsPage__jsonWrap {
+  margin-top: var(--space-8);
+}
+
+.logsPage__jsonLabel {
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.logsPage__jsonPre {
+  margin: 0;
+  padding: var(--space-6);
+  background: var(--color-bg-muted);
+  border: var(--border-width-hairline) solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  overflow: auto;
+  max-height: min(48vh, 360px);
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-snug);
+}
+
+.logsPage__jsonPre .token.property {
+  color: #7aa2ff;
+}
+
+.logsPage__jsonPre .token.string {
+  color: #3dd68c;
+}
+
+.logsPage__jsonPre .token.number {
+  color: #f5a742;
+}
+
+.logsPage__jsonPre .token.boolean,
+.logsPage__jsonPre .token.null {
+  color: #c678dd;
+}
+
+.logsPage__jsonPre .token.punctuation,
+.logsPage__jsonPre .token.operator {
+  color: var(--color-text-muted);
+}
